@@ -14,9 +14,8 @@ Network operational and failure information is presented to the message recipien
 * xMatters account - If you don't have one, [get one](https://www.xmatters.com)!
 
 # Files
-* [ExampleCommPlan.zip](ExampleCommPlan.zip) - This is an example comm plan to help get started. (If it doesn't make sense to have a full communication plan, then you can just use a couple javascript files like the one below.)
-* [EmailMessageTemplate.html](EmailMessageTemplate.html) - This is an example HTML template for emails and push messages. 
-* [FileA.js](FileA.js) - An example javascript file to be pasted into a Shared Library in the Integration builder. Note the comments
+* [MSSCOM201231.zip](MSSCOM201231.zip) - This is the Communication Plan for the Microsoft SCOM 2012 v3.1 integration. It is also included in the integration package zip.
+* [xM-MS-SCOM-2012_3_1.zip](xM-MS-SCOM-2012_3_1.zip) - This is the integration package for the Microsoft SCOM 2012 v3.1 integration. It includes the xMatters Communication Plan and the xMatters Integration Agent files, referenced later in these instructions.
 
 # How it works
 When a new SCOM 2012 alert triggers a given subscription, a SCOM notification channel delivers notification subscriber alerts. As a subscriber, the xMatters Integration Agent receives a command line injection, including these properties: alert ID, event source, event local time, management group name, priority, severity, server name, and resolution state. The xMatters Integration Agent enriches the event by also getting the event description. The xMatters Integration Agent then creates an xMatters event and notifies the specified recipient Group. The SCOM alert status is updated to Sent To xMatters.
