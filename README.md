@@ -165,7 +165,7 @@ The following sections indicate how the integration works by targeting the examp
 ## Trigger a notification
 The example described in this section uses a forced IP address conflict to illustrate how an alert is sent through xMatters to a user’s device, and how xMatters and Microsoft SCOM 2012 process the user’s response.
 
-<kbd><img src="media/SCOMNotification-01.png"></kbd> <kbd><img src="media/SCOMNotification-02.png"></kbd>
+<kbd><img src="media/SCOMNotification01.png"></kbd> <kbd><img src="media/SCOMNotification02.png"></kbd>
 
 ### To test the integration:
   * Using the Windows Local Area Connection Properties dialog, force an IP conflict between two computers that Microsoft SCOM 2012 is monitoring; for example, assign the Microsoft SCOM 2012 server’s IP address to another machine on the network.
