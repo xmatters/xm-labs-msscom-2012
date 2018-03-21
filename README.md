@@ -55,20 +55,20 @@ The installation instructions below assume you already have a working xMatters i
 * Within the extracted integration archive, navigate to \components\integration-agent
 * Copy the contents of the folder to the installation directory of the integration agent: for example: C:\integrationagent-5.1.8.2
 * This folder is referred to as <IAHOME> in the remainder of the instructions.
-* Open <IAHOME>\conf\IAConfig.xml and add the following line to the "service-configs" section: <path>msscom/msscom.xml</path>
+* Open `<IAHOME>\conf\IAConfig.xml` and add the following line to the "service-configs" section: `<path>msscom/msscom.xml</path>`
 * Save and close the file
-* Open deduplicator-filter.msscom.xml in the integration package folder components\integration-agent\conf and copy everything from <filter name="msscom"> to and including </filter>
+* Open deduplicator-filter.msscom.xml in the integration package folder components\integration-agent\conf and copy everything from `<filter name="msscom">` to and including `</filter>`
 * Close the file
-* Open the <IAHOME>\conf\deduplicator-filter.xml and paste the <filter> section copied above to the <deduplicator> section
+* Open the `<IAHOME>\conf\deduplicator-filter.xml` and paste the <filter> section copied above to the <deduplicator> section
 * Save and close the file
-* Open the <IAHOME>\integrationservices\msscom\configuration.js file and set the values for the following variables:
+* Open the `<IAHOME>\integrationservices\msscom\configuration.js` file and set the values for the following variables:
   * WEB_SERVICE_URL - the IB Inbound Integration URL using Basic Authentication
   * INITIATOR - REST User ID created above
   * userName - User ID of the SCOM user that is accessing the Alert, changing the status and updating Alerts
   * simpleLogin - When set to true, will use only the serverName to create a connection to the Microsoft Enterprise Management Group
   * serverName - Server name for the server running SCOM
   * domain - Domain from which SCOM Alerts will be queried
-  * debugLogging - When set to true, debug logging information will be logged into <IA_HOME>\integrationservices\msscom\log\
+  * debugLogging - When set to true, debug logging information will be logged into `<IA_HOME>\integrationservices\msscom\log\`
 
 ## Microsoft SCOM set up
 Now that you've configured xMatters to integrate with your system, it's time to configure Microsoft SCOM 2012 to integrate with xMatters. This requires that you configure the following components in Microsoft SCOM 2012:
@@ -85,7 +85,7 @@ The notification channels define how SCOM 2012 delivers the information to xMatt
   * In SCOM 2012, in the Administration pane, expand Notifications, and then click Channels.
   * Right-click in the Channels pane, and then select New Channel.
   * In the Command Notification Channel dialog box, in the Channel Name field, type Send New Alert via xMatters, and then click Next.
-  * In the Full path of the command file field, type the path to the APClient.bin.exe file in the xMatters integration agent installation folder; the default location is <IAHOME>\bin\APClient.bin.exe.
+  * In the Full path of the command file field, type the path to the APClient.bin.exe file in the xMatters integration agent installation folder; the default location is `<IAHOME>\bin\APClient.bin.exe`.
   * In the Command line parameters field, type the following:
   ```--map-data "applications|msscom" "add" "false" "$Data/Recipients/To/Address/Address$" "$Data/Context/DataItem/AlertId$" "$Data/Context/DataItem/AlertName$" "$Data/Context/DataItem/TimeRaisedLocal$" "$Target/ManagementGroup/Name$" "$Data/Context/DataItem/Priority$" "$Data/Context/DataItem/Severity$" "$Data/Context/DataItem/ManagedEntityDisplayName$" "$Data/Context/DataItem/ResolutionState$"```
   
@@ -97,7 +97,7 @@ The notification channels define how SCOM 2012 delivers the information to xMatt
   * In SCOM 2012, in the Administration pane, expand Notifications, and then click Channels.
   * Right-click in the Channels pane, and then select New Channel.
   * In the Command Notification Channel dialog box, in the Channel Name field, type Terminate Closed Alerts in xMatters, and then click Next.
-  * In the Full path of the command file field, type the path to the APClient.bin.exe file in the xMatters integration agent installation folder; the default location is <IAHOME>\bin\APClient.bin.exe.
+  * In the Full path of the command file field, type the path to the APClient.bin.exe file in the xMatters integration agent installation folder; the default location is `<IAHOME>\bin\APClient.bin.exe`.
   * In the Command line parameters field, type the following:
   ```--map-data "applications|msscom" "del" "false" "$Data/Recipients/To/Address/Address$" "$Data/Context/DataItem/AlertId$" "$Data/Context/DataItem/AlertName$" "$Data/Context/DataItem/TimeRaisedLocal$" "$Target/ManagementGroup/Name$" "$Data/Context/DataItem/Priority$" "$Data/Context/DataItem/Severity$" "$Data/Context/DataItem/ManagedEntityDisplayName$" "$Data/Context/DataItem/ResolutionState$"```
   
@@ -109,7 +109,7 @@ The notification channels define how SCOM 2012 delivers the information to xMatt
   * In SCOM 2012, in the Administration pane, expand Notifications, and then click Channels.
   * Right-click in the Channels pane, and then select New Channel.
   * In the Command Notification Channel dialog box, in the Channel Name field, type Send FYI Alert via xMatters, and then click Next.
-  * In the Full path of the command file field, type the path to the APClient.bin.exe file in the xMatters integration agent installation folder; the default location is <IAHOME>\bin\APClient.bin.exe.
+  * In the Full path of the command file field, type the path to the APClient.bin.exe file in the xMatters integration agent installation folder; the default location is `<IAHOME>\bin\APClient.bin.exe`.
   * In the Command line parameters field, type the following:
   ```--map-data "applications|msscom" "add" "true" "$Data/Recipients/To/Address/Address$" "$Data/Context/DataItem/AlertId$" "$Data/Context/DataItem/AlertName$" "$Data/Context/DataItem/TimeRaisedLocal$" "$Target/ManagementGroup/Name$" "$Data/Context/DataItem/Priority$" "$Data/Context/DataItem/Severity$" "$Data/Context/DataItem/ManagedEntityDisplayName$" "$Data/Context/DataItem/ResolutionState$"```
   
@@ -192,6 +192,6 @@ If an xMatters notification was not received you can work backwards to determine
 ## Enable SCOM Logging
 It is possible to enable logging for the component that interacts with SCOM within the Integration. 
 
-  * Open the <IAHOME>\integrationservices\msscom\configuration.js file in a text editor and set the debugLogging parameter to "true".
+  * Open the `<IAHOME>\integrationservices\msscom\configuration.js` file in a text editor and set the debugLogging parameter to "true".
 
-When set to true, debug logging information will be logged into: <IA_HOME>\integrationservices\applications\msscom\log\
+When set to true, debug logging information will be logged into: `<IA_HOME>\integrationservices\applications\msscom\log\`
