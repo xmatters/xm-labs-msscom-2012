@@ -36,7 +36,7 @@ To begin, download the integration zip file attached to this article and extract
 
 ### Import the Communication Plan
 * Import the MS SCOM 2012 Communication Plan [MSSCOM201231.zip](MSSCOM201231.zip)
-Instructions to import a Communication Plan can be found here: [Import a Communication Plan](http://help.xmatters.com/OnDemand/xmodwelcome/communicationplanbuilder/exportcommplan.htm)
+* Instructions to import a Communication Plan can be found here: [Import a Communication Plan](http://help.xmatters.com/OnDemand/xmodwelcome/communicationplanbuilder/exportcommplan.htm)
 
 ### Assign permissions to the Communication Plan and Form  
 * On the Communication Plans page, click the Edit drop-down menu for the MS SCOM 2012 3.1 communication plan then select Access Permissions
