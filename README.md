@@ -54,7 +54,7 @@ The installation instructions below assume you already have a working xMatters i
 * Within the extracted integration archive, navigate to \components\integration-agent
 * Copy the contents of the folder to the installation directory of the integration agent, for example:   `C:\integrationagent-5.1.8.2`
 * This folder is referred to as <IAHOME> in the remainder of the instructions.
-* Open `<IAHOME>\conf\IAConfig.xml` and add the following line to the "service-configs" section: `<path>msscom/msscom.xml</path>`
+* Open `<IAHOME>\conf\IAConfig.xml` and add the following line to the `<service-configs>` section: `<path>msscom/msscom.xml</path>`
 * Save and close the file
 * Open deduplicator-filter.msscom.xml in the integration package folder components\integration-agent\conf and copy everything from `<filter name="msscom">` to and including `</filter>`
 * Close the file
